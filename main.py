@@ -1,6 +1,6 @@
 import json
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 class Upgrade:
     def __init__(self, name, cost, income_increase, category, unlocked):
@@ -26,22 +26,19 @@ class UpgradeManager:
             data = [upgrade.__dict__ for upgrade in self.upgrades]
             json.dump(data, file, indent=4)
 
-    def get_most_profitable_upgrade(self):
-        max_profit = 0
-        most_profitable_upgrade = None
-        for upgrade in self.upgrades:
-            if upgrade.unlocked:
-                profit = upgrade.income_increase / upgrade.cost
-                if profit > max_profit:
-                    max_profit = profit
-                    most_profitable_upgrade = upgrade
-        return most_profitable_upgrade
+    def get_top_profitable_upgrades(self, top_n=3):
+        profitable_upgrades = sorted(
+            [upgrade for upgrade in self.upgrades if upgrade.unlocked],
+            key=lambda x: x.income_increase / x.cost,
+            reverse=True
+        )
+        return profitable_upgrades[:top_n]
 
 class App:
     def __init__(self, master):
         self.master = master
         self.upgrade_manager = UpgradeManager("upgrades.json")
-        self.most_profitable_upgrade = None
+        self.top_upgrades = None
 
         self.category_var = tk.StringVar()
         self.category_var.set("All")
@@ -58,6 +55,7 @@ class App:
         self.category_combobox.pack()
 
         self.setup_editing()
+        self.setup_top_upgrades_display()
         self.load_upgrades()
 
     def load_upgrades(self, *args):
@@ -68,19 +66,22 @@ class App:
                 self.listbox.insert(tk.END, f"{upgrade.name}, {upgrade.category} - Cost: {upgrade.cost}, Income Increase: {upgrade.income_increase}")
                 self.listbox.itemconfig(tk.END, {'bg': 'green' if upgrade.unlocked else 'red'})
 
-        self.calculate_most_profitable_upgrade()
-        self.highlight_most_profitable_upgrade()
+        self.calculate_top_profitable_upgrades()
+        self.highlight_top_profitable_upgrades()
 
-    def calculate_most_profitable_upgrade(self):
-        self.most_profitable_upgrade = self.upgrade_manager.get_most_profitable_upgrade()
-        if self.most_profitable_upgrade:
-            print(f"The most profitable upgrade to buy is: {self.most_profitable_upgrade.name}")
+    def calculate_top_profitable_upgrades(self):
+        self.top_upgrades = self.upgrade_manager.get_top_profitable_upgrades()
+        self.display_top_profitable_upgrades()
 
-    def highlight_most_profitable_upgrade(self):
-        if self.most_profitable_upgrade:
+    def highlight_top_profitable_upgrades(self):
+        if self.top_upgrades:
             for i, upgrade in enumerate(self.upgrade_manager.upgrades):
-                if upgrade == self.most_profitable_upgrade:
-                    self.listbox.itemconfig(i, {'bg': 'yellow'})
+                if upgrade == self.top_upgrades[0]:
+                    self.listbox.itemconfig(i, {'bg': 'cyan'})  # Топ 1 - голубой
+                elif upgrade == self.top_upgrades[1]:
+                    self.listbox.itemconfig(i, {'bg': 'yellow'})  # Топ 2 - желтый
+                elif upgrade == self.top_upgrades[2]:
+                    self.listbox.itemconfig(i, {'bg': 'orange'})  # Топ 3 - оранжевый
                 else:
                     self.listbox.itemconfig(i, {'bg': 'green' if upgrade.unlocked else 'red'})
 
@@ -132,13 +133,33 @@ class App:
             upgrade.category = self.category_entry.get()
             self.upgrade_manager.save_upgrades_to_file()
             self.load_upgrades()
-            self.calculate_most_profitable_upgrade()
-            self.highlight_most_profitable_upgrade()
+            self.calculate_top_profitable_upgrades()
+
+    def setup_top_upgrades_display(self):
+        self.top_upgrades_frame = tk.Frame(self.master)
+        self.top_upgrades_frame.pack()
+
+        tk.Label(self.top_upgrades_frame, text="Top 3 Upgrades:").grid(row=0, column=0, columnspan=2)
+        self.top_upgrade_labels = []
+        for i in range(3):
+            label = tk.Label(self.top_upgrades_frame, text="")
+            label.grid(row=i+1, column=0, columnspan=2)
+            self.top_upgrade_labels.append(label)
+
+    def display_top_profitable_upgrades(self):
+        for i in range(3):
+            if i < len(self.top_upgrades):
+                upgrade = self.top_upgrades[i]
+                profit = upgrade.income_increase / upgrade.cost
+                payback_time = upgrade.cost / upgrade.income_increase
+                self.top_upgrade_labels[i].config(text=f"{upgrade.name} - Profit: {profit:.2f}, Payback Time: {payback_time:.2f} hours")
+            else:
+                self.top_upgrade_labels[i].config(text="")
 
 def main():
     root = tk.Tk()
     root.title("Upgrade Manager")
-    root.geometry("600x400") 
+    root.geometry("600x400")
     app = App(root)
     root.mainloop()
 

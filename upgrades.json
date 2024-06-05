@@ -57,8 +57,8 @@
     },
     {
         "name": "Meme coins",
-        "cost": 3103,
-        "income_increase": 135,
+        "cost": 5307,
+        "income_increase": 154,
         "category": "Markets",
         "unlocked": true
     },
@@ -92,8 +92,8 @@
     },
     {
         "name": "mrgn trading x50",
-        "cost": 37335,
-        "income_increase": 1650,
+        "cost": 55160,
+        "income_increase": 1760,
         "category": "Markets",
         "unlocked": true
     },
@@ -141,8 +141,8 @@
     },
     {
         "name": "P2P trading",
-        "cost": 6516,
-        "income_increase": 278,
+        "cost": 11144,
+        "income_increase": 547,
         "category": "Markets",
         "unlocked": true
     },
@@ -281,15 +281,15 @@
     },
     {
         "name": "QA team",
-        "cost": 7033,
-        "income_increase": 305,
+        "cost": 17772,
+        "income_increase": 349,
         "category": "PR&Team",
         "unlocked": true
     },
     {
         "name": "Antihacking shield",
-        "cost": 3103,
-        "income_increase": 135,
+        "cost": 5307,
+        "income_increase": 154,
         "category": "PR&Team",
         "unlocked": true
     },
@@ -386,8 +386,8 @@
     },
     {
         "name": "License UAE",
-        "cost": 18667,
-        "income_increase": 840,
+        "cost": 27580,
+        "income_increase": 899,
         "category": "Legal",
         "unlocked": true
     },
@@ -505,8 +505,8 @@
     },
     {
         "name": "Apps Center Listing",
-        "cost": 29699,
-        "income_increase": 1310,
+        "cost": 39799,
+        "income_increase": 1400,
         "category": "Special",
         "unlocked": true
     }
