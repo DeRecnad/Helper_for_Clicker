@@ -141,8 +141,8 @@
     },
     {
         "name": "P2P trading",
-        "cost": 11144,
-        "income_increase": 547,
+        "cost": 11584,
+        "income_increase": 313,
         "category": "Markets",
         "unlocked": true
     },
@@ -204,8 +204,8 @@
     },
     {
         "name": "Coindesk",
-        "cost": 2653,
-        "income_increase": 112,
+        "cost": 3733,
+        "income_increase": 120,
         "category": "PR&Team",
         "unlocked": true
     },
@@ -393,8 +393,8 @@
     },
     {
         "name": "License Europe",
-        "cost": 27580,
-        "income_increase": 1150,
+        "cost": 42786,
+        "income_increase": 1230,
         "category": "Legal",
         "unlocked": true
     },

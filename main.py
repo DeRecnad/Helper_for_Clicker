@@ -1,6 +1,18 @@
 import json
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+
+def format_cost(cost):
+    num = float('{:.3g}'.format(cost))
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num /= 1000.0
+    return '{}{}'.format('{:f}'.format(num).rstrip('0').rstrip('.'), ['', 'K', 'M', 'B', 'T'][magnitude])
+    return str(cost)
 
 class Upgrade:
     def __init__(self, name, cost, income_increase, category, unlocked):
@@ -56,6 +68,7 @@ class App:
 
         self.setup_editing()
         self.setup_top_upgrades_display()
+        self.setup_graph_display()
         self.load_upgrades()
 
     def load_upgrades(self, *args):
@@ -68,6 +81,7 @@ class App:
 
         self.calculate_top_profitable_upgrades()
         self.highlight_top_profitable_upgrades()
+        self.update_graph()
 
     def calculate_top_profitable_upgrades(self):
         self.top_upgrades = self.upgrade_manager.get_top_profitable_upgrades()
@@ -128,40 +142,71 @@ class App:
     def update_upgrade(self):
         if self.selected_index is not None:
             upgrade = self.upgrade_manager.upgrades[self.selected_index]
+            upgrade.category = self.category_entry.get()
             upgrade.cost = int(self.new_cost_entry.get())
             upgrade.income_increase = int(self.new_income_entry.get())
-            upgrade.category = self.category_entry.get()
             self.upgrade_manager.save_upgrades_to_file()
             self.load_upgrades()
-            self.calculate_top_profitable_upgrades()
 
     def setup_top_upgrades_display(self):
-        self.top_upgrades_frame = tk.Frame(self.master)
-        self.top_upgrades_frame.pack()
-
-        tk.Label(self.top_upgrades_frame, text="Top 3 Upgrades:").grid(row=0, column=0, columnspan=2)
         self.top_upgrade_labels = []
         for i in range(3):
-            label = tk.Label(self.top_upgrades_frame, text="")
-            label.grid(row=i+1, column=0, columnspan=2)
+            label = tk.Label(self.master, text="", bg="white")
+            label.pack()
             self.top_upgrade_labels.append(label)
 
     def display_top_profitable_upgrades(self):
-        for i in range(3):
-            if i < len(self.top_upgrades):
-                upgrade = self.top_upgrades[i]
-                profit = upgrade.income_increase / upgrade.cost
-                payback_time = upgrade.cost / upgrade.income_increase
-                self.top_upgrade_labels[i].config(text=f"{upgrade.name} - Profit: {profit:.2f}, Payback Time: {payback_time:.2f} hours")
-            else:
-                self.top_upgrade_labels[i].config(text="")
+        if self.top_upgrades:
+            for i, upgrade in enumerate(self.top_upgrades):
+                self.top_upgrade_labels[i].config(text=f"{upgrade.name} - Cost: {upgrade.cost}, Income Increase: {upgrade.income_increase}")
+
+    def setup_graph_display(self):
+        self.figure = plt.figure(figsize=(5, 4))
+        self.subplot = self.figure.add_subplot(111)
+        self.graph = FigureCanvasTkAgg(self.figure, master=self.master)
+        self.graph.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+    def update_graph(self):
+        if self.upgrade_manager.upgrades:
+            # Получение данных для графика
+            upgrades_sorted = sorted(self.upgrade_manager.upgrades, key=lambda upgrade: upgrade.cost)
+            x = [upgrade.cost for upgrade in upgrades_sorted]
+            y = [upgrade.income_increase for upgrade in upgrades_sorted]
+            colors = ['cyan' if upgrade in self.top_upgrades else 'grey' for upgrade in upgrades_sorted]
+
+            # Очистка графика
+            self.subplot.clear()
+
+            # Построение графика
+            self.subplot.scatter(x, y, color=colors, s=15)  # Уменьшаем размер точек до 20
+            self.subplot.set_xlabel('Upgrade Cost')
+            self.subplot.set_ylabel('Income Increase')
+            self.subplot.set_title('Upgrade Cost vs. Income Increase')
+
+            # Установка пределов для оси Y
+            min_income = min(y)
+            max_income = max(y)
+            self.subplot.set_ylim(min_income, max_income * 1.1)
+
+            # Генерация равномерно распределенных значений для оси X
+            max_cost = max(x)
+            num_ticks = 8  # Количество меток на оси X
+            x_ticks = np.linspace(0, max_cost, num_ticks)
+
+            # Установка меток и их форматирование на оси X
+            self.subplot.set_xticks(x_ticks)
+            self.subplot.set_xticklabels([format_cost(cost) for cost in x_ticks])
+
+            # Обновление графика
+            self.graph.draw()
+
 
 def main():
     root = tk.Tk()
     root.title("Upgrade Manager")
-    root.geometry("600x400")
     app = App(root)
     root.mainloop()
 
 if __name__ == "__main__":
     main()
+
