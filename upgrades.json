@@ -1,0 +1,513 @@
+[
+    {
+        "name": "Fan tokens",
+        "cost": 37335,
+        "income_increase": 1420,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Stacking",
+        "cost": 29950,
+        "income_increase": 1030,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "BTC pairs",
+        "cost": 2139,
+        "income_increase": 69,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "ETH pairs",
+        "cost": 2567,
+        "income_increase": 69,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Top 10 cmc pairs",
+        "cost": 3733,
+        "income_increase": 120,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "GameFI tokens",
+        "cost": 21407,
+        "income_increase": 147,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Defi2.0 tokens",
+        "cost": 1867,
+        "income_increase": 60,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "SocialFI tokens",
+        "cost": 2758,
+        "income_increase": 80,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Meme coins",
+        "cost": 3103,
+        "income_increase": 135,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Shit coins",
+        "cost": 27580,
+        "income_increase": 947,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "mrgn trading x10",
+        "cost": 13790,
+        "income_increase": 442,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "mrgn trading x20",
+        "cost": 59600,
+        "income_increase": 689,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "mrgn trading x30",
+        "cost": 29950,
+        "income_increase": 859,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "mrgn trading x50",
+        "cost": 37335,
+        "income_increase": 1650,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "mrgn trading x75",
+        "cost": 500,
+        "income_increase": 60,
+        "category": "Markets",
+        "unlocked": false
+    },
+    {
+        "name": "mrgn trading x100",
+        "cost": 500,
+        "income_increase": 60,
+        "category": "Markets",
+        "unlocked": false
+    },
+    {
+        "name": "Derivaties",
+        "cost": 21393,
+        "income_increase": 851,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Prediction markets",
+        "cost": 14975,
+        "income_increase": 593,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Web3 untegration",
+        "cost": 35854,
+        "income_increase": 1260,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "DAO",
+        "cost": 500,
+        "income_increase": 60,
+        "category": "Markets",
+        "unlocked": false
+    },
+    {
+        "name": "P2P trading",
+        "cost": 6516,
+        "income_increase": 278,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Trading bots",
+        "cost": 7840,
+        "income_increase": 293,
+        "category": "Markets",
+        "unlocked": true
+    },
+    {
+        "name": "Support team",
+        "cost": 4137,
+        "income_increase": 112,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "HamsterBook",
+        "cost": 4279,
+        "income_increase": 120,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "X",
+        "cost": 13112,
+        "income_increase": 157,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Cointelegraph",
+        "cost": 8344,
+        "income_increase": 79,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "HamsterTube",
+        "cost": 5134,
+        "income_increase": 155,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "HamsterGram",
+        "cost": 2758,
+        "income_increase": 80,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "TikTok",
+        "cost": 6418,
+        "income_increase": 172,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Coindesk",
+        "cost": 2653,
+        "income_increase": 112,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Influencers",
+        "cost": 59600,
+        "income_increase": 531,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "CEO",
+        "cost": 8557,
+        "income_increase": 172,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "IT team",
+        "cost": 47680,
+        "income_increase": 472,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Marketing",
+        "cost": 3733,
+        "income_increase": 105,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Partnership program",
+        "cost": 2758,
+        "income_increase": 112,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Product team",
+        "cost": 5516,
+        "income_increase": 161,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "BisDev team",
+        "cost": 2758,
+        "income_increase": 80,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Two factor authentication",
+        "cost": 159841,
+        "income_increase": 301,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "UX and UI team",
+        "cost": 10593,
+        "income_increase": 322,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Security team",
+        "cost": 8557,
+        "income_increase": 344,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "QA team",
+        "cost": 7033,
+        "income_increase": 305,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Antihacking shield",
+        "cost": 3103,
+        "income_increase": 135,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Risk management team",
+        "cost": 17114,
+        "income_increase": 455,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Security Audition",
+        "cost": 3308,
+        "income_increase": 107,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Anonymous transactions ban",
+        "cost": 21456,
+        "income_increase": 590,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Blocking suspicious accounts",
+        "cost": 6895,
+        "income_increase": 257,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Tokenomics expert",
+        "cost": 18667,
+        "income_increase": 750,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Consensus Explorer pass",
+        "cost": 49498,
+        "income_increase": 1960,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "VC labs",
+        "cost": 17089,
+        "income_increase": 535,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "Compliance officer",
+        "cost": 3859,
+        "income_increase": 128,
+        "category": "PR&Team",
+        "unlocked": true
+    },
+    {
+        "name": "KYC",
+        "cost": 1394,
+        "income_increase": 18,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "KYB",
+        "cost": 4279,
+        "income_increase": 103,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "Legal opinion",
+        "cost": 3733,
+        "income_increase": 90,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "SEC transparancy",
+        "cost": 28608,
+        "income_increase": 118,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "Anti money loundering",
+        "cost": 25671,
+        "income_increase": 481,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License UAE",
+        "cost": 18667,
+        "income_increase": 840,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Europe",
+        "cost": 27580,
+        "income_increase": 1150,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Asia",
+        "cost": 13266,
+        "income_increase": 519,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License South America",
+        "cost": 13266,
+        "income_increase": 547,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Australia",
+        "cost": 27580,
+        "income_increase": 1090,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License North America",
+        "cost": 37335,
+        "income_increase": 1440,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Nigeria",
+        "cost": 8274,
+        "income_increase": 273,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Japan",
+        "cost": 77566,
+        "income_increase": 3180,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "License Ethiopia",
+        "cost": 54296,
+        "income_increase": 2200,
+        "category": "Legal",
+        "unlocked": true
+    },
+    {
+        "name": "Consensus Piranha Pass",
+        "cost": 55125,
+        "income_increase": 2030,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Web3 academy launch",
+        "cost": 60676,
+        "income_increase": 2400,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "YouTube Gold Button",
+        "cost": 55125,
+        "income_increase": 2030,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Hamster YouTube Channel",
+        "cost": 12836,
+        "income_increase": 430,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Bitcoin Pizza Day",
+        "cost": 3733,
+        "income_increase": 150,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Top 10 global rating",
+        "cost": 55160,
+        "income_increase": 1920,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Special Hamster Conference",
+        "cost": 42786,
+        "income_increase": 1540,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "There are two chairs...",
+        "cost": 55125,
+        "income_increase": 2140,
+        "category": "Special",
+        "unlocked": true
+    },
+    {
+        "name": "Apps Center Listing",
+        "cost": 29699,
+        "income_increase": 1310,
+        "category": "Special",
+        "unlocked": true
+    }
+]
